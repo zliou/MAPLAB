@@ -24,14 +24,24 @@
 
 
 <script>
-	console.log("version: apple");
-	var map;
+	console.log("version: bananaman");
+	
+	var map;	  
+	var NYC = {lat: -25.363, lng: 131.044};
+
+
 	function initMap() {
 		map = new google.maps.Map(document.getElementById('map'), {
-			center: {lat: 40.7128, lng: -74.0059},
-			zoom: 14
+			center: NYC,
+			zoom: 14,
 		});
 	}
+	var marker = new google.maps.Marker({
+		position: NYC,
+		map: map,
+		title: 'Hello World!'
+	});
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqK__Ju9R6ykAH-aTkF8otE6YNwV5rL_M&callback=initMap"
     async defer>
