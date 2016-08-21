@@ -24,13 +24,14 @@
 
 
 <script>
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 40.7128, lng: 74.0059},
-      zoom: 8
-    });
-  }
+	console.log("version: apple");
+	var map;
+	function initMap() {
+		map = new google.maps.Map(document.getElementById('map'), {
+			center: {lat: 40.7128, lng: -74.0059},
+			zoom: 8
+		});
+	}
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqK__Ju9R6ykAH-aTkF8otE6YNwV5rL_M&callback=initMap"
     async defer>
