@@ -14,9 +14,6 @@
       #map {
         height: 100%;
       }
-      #clear {
-      	z-index: 1;
-      }
     </style>
 
 </head>
@@ -24,8 +21,6 @@
 <body>
 
 <div id='map'></div>
-
-<button id='clear' onclick='clearMarker();'></button>
 
 <script>
 	console.log("version: ephiphany");
@@ -45,12 +40,19 @@
 		marker = new google.maps.Marker({
 			position: NYC,
 			map: map,
-			title: 'Hello World!'
+			title: 'Hello World!',
+			animation: google.maps.Animation.DROP,
 		});
+		marker.addListener('click', toggleBounce);
 	}
 
-	function clearMarker() {
-		marker.setMap(null);
+
+	function toggleBounce() {
+		if (marker.getAnimation() !== null) {
+			marker.setAnimation(null);
+		} else {
+			marker.setAnimation(google.maps.Animation.BOUNCE);
+		}
 	}
 
 </script>
@@ -60,3 +62,13 @@
 </body>
 
 </html>
+
+<!-- 
+
+NOTES below here
+
+marker.setMap(null); clears a map marker (aka pin)
+
+-->
+
+
