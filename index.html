@@ -29,26 +29,21 @@
 	// Constants & locations
 	var NYC = {lat: -25.363, lng: 131.044};
 
-	// Map config	
-	var map;	  
-	var mapOptions = {
-		zoom: 14,
-		center: NYC
+	function initMap() {
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 15,
+			center: NYC
+		});
+
+		var marker = new google.maps.Marker({
+			position: NYC,
+			map: map,
+			title: 'Hello World!'
+		});
 	}
-
-	// Init map	
-	map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-	// Create new marker
-	var marker = new google.maps.Marker({
-		position: NYC,
-		map: map,
-		title: 'Hello World!'
-	});
-
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqK__Ju9R6ykAH-aTkF8otE6YNwV5rL_M">
-</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqK__Ju9R6ykAH-aTkF8otE6YNwV5rL_M&callback=initMap" async defer></script>
 
 
 </body>
