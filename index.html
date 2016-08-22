@@ -23,7 +23,7 @@
 <div id='map'></div>
 
 <script>
-	console.log("version: ephiphany");
+	console.log("version: functions");
 
 	// Constants & locations
 	var map;
@@ -41,7 +41,7 @@
 			position: NYC,
 			map: map,
 			title: 'Hello World!',
-			animation: google.maps.Animation.DROP,
+			animation: google.maps.Animation.BOUNCE,
 		});
 		marker.addListener('click', toggleBounce);
 	}
@@ -68,6 +68,7 @@
 NOTES below here
 
 marker.setMap(null); clears a map marker (aka pin)
+animation: google.maps.Animation.[BOUNCE | DROP] gives a pin an animation,
 
 -->
 
