@@ -14,6 +14,9 @@
       #map {
         height: 100%;
       }
+      #clear {
+      	z-index: 1;
+      }
     </style>
 
 </head>
@@ -22,26 +25,34 @@
 
 <div id='map'></div>
 
+<button id='clear' onclick='clearMarker();'></button>
 
 <script>
-	console.log("version: door");
+	console.log("version: ephiphany");
 
 	// Constants & locations
-	var NYC = {lat: 40.7128, lng: 74.0059};
+	var map;
+	var marker;
+	var NYC = {lat: 40.7128, lng: -74.0059};
 
 	function initMap() {
 
-		var map = new google.maps.Map(document.getElementById('map'), {
+		map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 15,
 			center: NYC
 		});
 
-		var marker = new google.maps.Marker({
+		marker = new google.maps.Marker({
 			position: NYC,
 			map: map,
 			title: 'Hello World!'
 		});
 	}
+
+	function clearMarker() {
+		marker.setMap(null);
+	}
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqK__Ju9R6ykAH-aTkF8otE6YNwV5rL_M&callback=initMap" async defer></script>
 
