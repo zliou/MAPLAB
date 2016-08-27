@@ -63,6 +63,7 @@
 	// Adds a marker to the map.
 	function addMarker(event) {
 		var location = event.latLng;
+		var map = event.target;
 		// Add the marker at the clicked location, and add the next-available label
 		// from the array of alphabetical characters.
 		var marker = new google.maps.Marker({
