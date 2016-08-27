@@ -23,12 +23,16 @@
 <div id='map'></div>
 
 <script>
-	console.log("version: functions");
+	console.log("version: gerunds");
 
 	// Constants & locations
 	var map;
 	var marker;
 	var NYC = {lat: 40.7128, lng: -74.0059};
+	
+	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	var labelIndex = 0;
+
 
 	function initMap() {
 
@@ -55,6 +59,18 @@
 		}
 	}
 
+	// Adds a marker to the map.
+	function addMarker(location, map) {
+		// Add the marker at the clicked location, and add the next-available label
+		// from the array of alphabetical characters.
+		var marker = new google.maps.Marker({
+			position: location,
+			label: labels[labelIndex++ % labels.length],
+			map: map
+		});
+	}
+
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqK__Ju9R6ykAH-aTkF8otE6YNwV5rL_M&callback=initMap" async defer></script>
 
@@ -71,7 +87,9 @@ NOTES below here
 
 -	animation: google.maps.Animation.[BOUNCE | DROP] gives a pin a starting animation
 	- 	marker.setAnimation(google.maps.Animation.BOUNCE); sets an animation
+	-	the pin bounces twice in 1450ms
 
+	
 -->
 
 
