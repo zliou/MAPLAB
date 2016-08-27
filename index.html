@@ -23,12 +23,13 @@
 <div id='map'></div>
 
 <script>
-	console.log("version: kite");
+	console.log("version: lover");
 
 	// Constants & locations
 	var map;
 	var marker;
 	var NYC = {lat: 40.7128, lng: -74.0059};
+	var SF  = {lat: 37.7749, lng: -122.4194};
 	
 	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	var labelIndex = 0;
@@ -39,14 +40,15 @@
 
 		map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 15,
-			center: NYC
+			center: SF
 		});
 
 		marker = new google.maps.Marker({
-			position: NYC,
+			position: SF,
 			map: map,
 			title: 'Hello World!',
 			animation: google.maps.Animation.DROP,
+			icon: img,
 		});
 		marker.addListener('click', toggleBounce);
 		map.addListener('click', addMarker);
