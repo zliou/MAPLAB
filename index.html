@@ -23,7 +23,7 @@
 <div id='map'></div>
 
 <script>
-	console.log("version: jach");
+	console.log("version: kite");
 
 	// Constants & locations
 	var map;
@@ -32,6 +32,7 @@
 	
 	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	var labelIndex = 0;
+	var img = './pin-test.png';
 
 
 	function initMap() {
@@ -63,13 +64,14 @@
 	// Adds a marker to the map.
 	function addMarker(event) {
 		var location = event.latLng;
-		var map = event.target;
+		var targetMap = event.target;
 		// Add the marker at the clicked location, and add the next-available label
 		// from the array of alphabetical characters.
 		var marker = new google.maps.Marker({
 			position: location,
-			label: labels[labelIndex++ % labels.length],
-			map: map
+			// label: labels[labelIndex++ % labels.length],
+			icon: image;
+			map: targetMap
 		});
 	}
 
