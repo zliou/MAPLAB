@@ -23,7 +23,7 @@
 <div id='map'></div>
 
 <script>
-	console.log("version: in");
+	console.log("version: jach");
 
 	// Constants & locations
 	var map;
@@ -48,6 +48,7 @@
 			animation: google.maps.Animation.DROP,
 		});
 		marker.addListener('click', toggleBounce);
+		map.addListener('click', addMarker);
 	}
 
 
@@ -60,7 +61,8 @@
 	}
 
 	// Adds a marker to the map.
-	function addMarker(location, map) {
+	function addMarker(event) {
+		var location = event.latLng;
 		// Add the marker at the clicked location, and add the next-available label
 		// from the array of alphabetical characters.
 		var marker = new google.maps.Marker({
@@ -70,10 +72,6 @@
 		});
 	}
 
-	  // This event listener calls addMarker() when the map is clicked.
-	map.addListener(map, 'click', function(event) {
-		addMarker(event.latLng, map);
-	});
 
 
 
