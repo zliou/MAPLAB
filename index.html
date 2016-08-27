@@ -23,7 +23,7 @@
 <div id='map'></div>
 
 <script>
-	console.log("version: nobody");
+	console.log("version: oh");
 
 	// Constants & locations
 	var map;
@@ -71,10 +71,12 @@
 		// from the array of alphabetical characters.
 		var marker = new google.maps.Marker({
 			position: location,
-			// label: labels[labelIndex++ % labels.length],
 			icon: img,
 			map: targetMap
 		});
+		console.log(marker);
+		console.log(img);
+
 	}
 
 
