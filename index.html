@@ -41,7 +41,7 @@
 			position: NYC,
 			map: map,
 			title: 'Hello World!',
-			animation: google.maps.Animation.BOUNCE,
+			animation: google.maps.Animation.DROP,
 		});
 		marker.addListener('click', toggleBounce);
 	}
@@ -67,8 +67,10 @@
 
 NOTES below here
 
-marker.setMap(null); clears a map marker (aka pin)
-animation: google.maps.Animation.[BOUNCE | DROP] gives a pin an animation,
+-	marker.setMap(null); clears a map marker (aka pin)
+
+-	animation: google.maps.Animation.[BOUNCE | DROP] gives a pin a starting animation
+	- 	marker.setAnimation(google.maps.Animation.BOUNCE); sets an animation
 
 -->
 
