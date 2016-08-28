@@ -63,10 +63,13 @@
 			icon: pin,
 			draggable: true,
 		});
-		marker.addListener('click', toggleBounce);
+		marker.addListener('click', whereAmI);
 		map.addListener('click', addMarker);
 	}
 
+	function whereAmI() {
+		console.log(event.target.latLng);
+	}
 
 	function toggleBounce() {
 		if (marker.getAnimation() !== null) {
