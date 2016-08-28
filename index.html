@@ -26,7 +26,7 @@
 
 
 <script>
-	console.log("version: var");
+	console.log("version: water");
 
 	// Constants & locations
 	var map;
@@ -67,7 +67,7 @@
 		map.addListener('click', addMarker);
 	}
 
-	function whereAmI() {
+	function whereAmI(event) {
 		console.log(event.target.latLng);
 	}
 
@@ -94,6 +94,8 @@
 			map: map,
 			draggable: true,
 		});
+		
+		marker.addListener('click', whereAmI);
 		console.log(marker);
 
 	}
