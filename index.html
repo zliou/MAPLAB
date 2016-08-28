@@ -31,9 +31,10 @@
 	var NYC = {lat: 40.7128, lng: -74.0059};
 	var SF  = {lat: 37.7749, lng: -122.4194};
 	
-	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	var labelIndex = 0;
+	var pindex = 0;
 	var img = './pin-test-2.png';
+	var prefix = './img/egge-pin-';
+	var suffix = '.png';
 
 
 	function initMap() {
@@ -66,15 +67,18 @@
 	// Adds a marker to the map.
 	function addMarker(event) {
 		var location = event.latLng;
-		// var targetMap = event.target;
+		
+		var pinNo = pindex++ % 3;
+		var pinIcon = prefix + pinNo + suffix;
+		console.log(pinIcon);
+
 		// from the array of alphabetical characters.
 		var marker = new google.maps.Marker({
 			position: location,
-			icon: img,
+			icon: pinIcon,
 			map: map,
 		});
 		console.log(marker);
-		console.log(img);
 
 	}
 
