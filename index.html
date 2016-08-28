@@ -32,7 +32,10 @@
 	var SF  = {lat: 37.7749, lng: -122.4194};
 	
 	var pindex = 0;
-	var img = './pin-test-2.png';
+	var img = {
+		url: './pin.png',
+		anchor: new google.maps.Point(15, 25),
+	}
 	var prefix = './img/egge-pin-';
 	var suffix = '.png';
 
@@ -68,14 +71,14 @@
 	function addMarker(event) {
 		var location = event.latLng;
 		
-		var pinNo = (pindex++ % 3) + 1;
-		var pinIcon = prefix + pinNo + suffix;
-		console.log(pinIcon);
+		// var pinNo = (pindex++ % 3) + 1;
+		// var pinIcon = prefix + pinNo + suffix;
+		// console.log(pinIcon);
 
 		// from the array of alphabetical characters.
 		var marker = new google.maps.Marker({
 			position: location,
-			icon: pinIcon,
+			icon: pin,
 			map: map,
 		});
 		console.log(marker);
@@ -102,6 +105,7 @@ NOTES below here
 -	animation: google.maps.Animation.[BOUNCE | DROP] gives a pin a starting animation
 	- 	marker.setAnimation(google.maps.Animation.BOUNCE); sets an animation
 	-	the pin bounces twice in 1450ms
+	-	put borders on the map pin icons
 
 	
 -->
